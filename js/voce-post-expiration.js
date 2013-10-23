@@ -13,8 +13,8 @@ var clearExpirationValues;
 
 	$('.cancel-expire-datestamp').click(function() {
 		$('#expire-datestamp-value').slideUp("normal");
-		$('.expire-datestamp-wrap').find('input').each(function(i,e){
-			if(typeof $(this).data('original-value') != 'undefined'){
+		$('.expire-datestamp-wrap').find('input').each(function(){
+			if(typeof $(this).data('original-value') !== 'undefined'){
 				$(this).val($(this).data('original-value'));
 			}
 		});
@@ -23,7 +23,7 @@ var clearExpirationValues;
 		$('.expire-datestamp-wrap').data('set', 'false');
 		return false;
 	});
-	
+
 	$('.remove-expire-datestamp').click(function() {
 		$('#expire-datestamp-value').slideUp("normal");
 		clearExpirationValues();
@@ -33,22 +33,22 @@ var clearExpirationValues;
 		return false;
 	});
 
-	$('#publish, #save-post').on('click', function(e, i){
+	$('#publish, #save-post').on('click', function(){
 		if(! $('.expire-datestamp-wrap').data('set')){
 			clearExpirationValues();
 		}
 	});
-	
+
 	$('.save-expire-datestamp').click(function () { // crazyhorse - multiple ok cancels
-		var year = $('#expire_year').val(), 
-		month = $('#expire_month').val(), 
-		day = $('#expire_day').val(), 
-		hour = $('#expire_hour').val(), 
+		var year = $('#expire_year').val(),
+		month = $('#expire_month').val(),
+		day = $('#expire_day').val(),
+		hour = $('#expire_hour').val(),
 		minute = $('#expire_minute').val(),
 		attemptedDate = new Date( year, month - 1, day, hour, minute ),
 		originalDate = new Date( $('#expire_year').data('original_value'), $('#expire_month').data('original_value'), $('#expire_day').data('original_value'), $('#expire_hour').data('original_value'), $('#expire_minute').data('original_value') );
-		
-		if ( attemptedDate.getFullYear() != year || (1 + attemptedDate.getMonth()) != month || attemptedDate.getDate() != day || attemptedDate.getMinutes() != minute ) {
+
+		if ( attemptedDate.getFullYear() !== year || (1 + attemptedDate.getMonth()) !== month || attemptedDate.getDate() !== day || attemptedDate.getMinutes() !== minute ) {
 			$('.expire-datestamp-wrap', '#expire-datestamp-value').addClass('form-invalid');
 			return false;
 		} else {
@@ -57,7 +57,7 @@ var clearExpirationValues;
 
 		$('#expire-datestamp-value').slideUp("normal");
 		$('.edit-expiredatestamp').show();
-		if ( originalDate.toUTCString() == attemptedDate.toUTCString() ) { //hack
+		if ( originalDate.toUTCString() === attemptedDate.toUTCString() ) { //hack
 			$('#expire-datestamp').html(stamp);
 		} else {
 			$('#expire-datestamp').html(
@@ -82,5 +82,5 @@ var clearExpirationValues;
 		$('#expire_minute').val('');
 		$('#expire_second').val('');
 		$('#expire_month').val('');
-	}
+	};
 })(jQuery);
