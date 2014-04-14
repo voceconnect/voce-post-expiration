@@ -5,6 +5,9 @@
  *
  * @author Kevin Langley
  */
+
+if( ! class_exists( 'Voce_Post_Expiration' ) ):
+
 class Voce_Post_Expiration {
 
 	const POST_TYPE_SUPPORT_NAME = 'post-expiration';
@@ -210,4 +213,7 @@ class Voce_Post_Expiration {
 			self::expire_post($exp_post);
 	}
 }
-add_action('init', array('Voce_Post_Expiration', 'initialize'));
+
+add_action( 'init', array( 'Voce_Post_Expiration', 'initialize' ) );
+
+endif;
