@@ -36,11 +36,13 @@
 		$('.expire-datestamp-wrap').data('set', 'true');
 	} );
 
-	$('#publish, #save-post').on('click', function(e, i){
+	$('#publish, #save-post').one('click', function(e, i){
 		e.preventDefault();
 
 		if( !$('.expire-datestamp-wrap').data('set') )
 			clearExpirationValues();
+
+		$(this).click();
 	});
 
 	$('.save-expire-datestamp').click( function(e) {
