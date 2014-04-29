@@ -36,7 +36,7 @@
 		$('.expire-datestamp-wrap').data('set', 'true');
 	} );
 
-	$('#publish, #save-post').one('click', function(e, i){
+	$('#publish, #save-post').one('click', function(e){
 		e.preventDefault();
 
 		if( !$('.expire-datestamp-wrap').data('set') )
