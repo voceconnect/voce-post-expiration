@@ -5,7 +5,7 @@ Contributors: kevinlangleyjr, voceplatforms
 Tags: expiration, post, expire  
 Requires at least: 3.2  
 Tested up to: 3.9.1  
-Stable tag: 0.2  
+Stable tag: 0.3  
 License: GPLv2 or later  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,8 +36,11 @@ add_post_type_support( 'post', 'post-expiration' );
 
 # Changelog
 
-**0.2**  
+**0.3**  
 *Fixing save post issue with clearing expired date from fields*
+
+**0.2**  
+*Checking if class exists before redeclaring it*
 
 **0.1**  
 *Initial release.*
