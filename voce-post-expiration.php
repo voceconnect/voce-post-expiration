@@ -41,7 +41,7 @@ class Voce_Post_Expiration {
 		if ( !self::is_enabled() ) {
 			return;
 		}
-		// js to hide the Add New menu for this post type
+
 		wp_enqueue_script( 'post-expiration', plugins_url('js/voce-post-expiration.js', __FILE__), array( 'jquery' ), self::VERSION, true );
 	}
 
