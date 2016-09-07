@@ -10,6 +10,7 @@ if( ! class_exists( 'Voce_Post_Expiration' ) ):
 
 class Voce_Post_Expiration {
 
+	const VERSION = '0.4';
 	const POST_TYPE_SUPPORT_NAME = 'post-expiration';
 
 	public static function initialize() {
@@ -40,8 +41,8 @@ class Voce_Post_Expiration {
 		if ( !self::is_enabled() ) {
 			return;
 		}
-		// js to hide the Add New menu for this post type
-		wp_enqueue_script( 'post-expiration', plugins_url('js/voce-post-expiration.js', __FILE__), array( 'jquery' ), SCRIPT_VERSION, true );
+
+		wp_enqueue_script( 'post-expiration', plugins_url('js/voce-post-expiration.js', __FILE__), array( 'jquery' ), self::VERSION, true );
 	}
 
 	/**
